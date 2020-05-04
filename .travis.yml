@@ -1,14 +1,11 @@
 language: generic 
-
 sudo: required
+
 services:
-    - docker
+  - docker
 
 before_install:
-    - docker build -t evaou/docker-react -f Dockerfile.dev .
+  - docker build -t evaou/docker-react -f Dockerfile.dev .
 
 script:
-    - docker run -e CI=true evaou/docker-react npm run test -- --coverage
-
-
-    docker run xxx npm run test -- --coverage
+  - docker run -e CI=true evaou/docker-react npm run test -- --coverage
